@@ -25,6 +25,7 @@ import (
 	"github.com/megaease/easeprobe/notify/email"
 	"github.com/megaease/easeprobe/notify/lark"
 	"github.com/megaease/easeprobe/notify/log"
+	"github.com/megaease/easeprobe/notify/mattermost"
 	"github.com/megaease/easeprobe/notify/slack"
 	"github.com/megaease/easeprobe/notify/telegram"
 	"github.com/megaease/easeprobe/notify/wecom"
@@ -33,15 +34,16 @@ import (
 
 //Config is the notify configuration
 type Config struct {
-	Log      []log.NotifyConfig      `yaml:"log"`
-	Email    []email.NotifyConfig    `yaml:"email"`
-	Slack    []slack.NotifyConfig    `yaml:"slack"`
-	Discord  []discord.NotifyConfig  `yaml:"discord"`
-	Telegram []telegram.NotifyConfig `yaml:"telegram"`
-	AwsSNS   []aws.SNSNotifyConfig   `yaml:"aws_sns"`
-	Wecom    []wecom.NotifyConfig    `yaml:"wecom"`
-	Dingtalk []dingtalk.NotifyConfig `yaml:"dingtalk"`
-	Lark     []lark.NotifyConfig     `yaml:"lark"`
+	Log        []log.NotifyConfig        `yaml:"log"`
+	Email      []email.NotifyConfig      `yaml:"email"`
+	Slack      []slack.NotifyConfig      `yaml:"slack"`
+	Discord    []discord.NotifyConfig    `yaml:"discord"`
+	Telegram   []telegram.NotifyConfig   `yaml:"telegram"`
+	AwsSNS     []aws.SNSNotifyConfig     `yaml:"aws_sns"`
+	Wecom      []wecom.NotifyConfig      `yaml:"wecom"`
+	Dingtalk   []dingtalk.NotifyConfig   `yaml:"dingtalk"`
+	Lark       []lark.NotifyConfig       `yaml:"lark"`
+	Mattermost []mattermost.NotifyConfig `yaml:"mattermost"`
 }
 
 // Notify is the configuration of the Notify

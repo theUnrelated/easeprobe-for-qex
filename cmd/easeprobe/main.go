@@ -99,16 +99,16 @@ func run(probers []probe.Prober, notifies []notify.Notify, done chan bool) {
 			return
 		case result := <-notifyChan:
 			// if the status has no change, no need notify
-			if result.PreStatus == result.Status {
-				log.Debugf("%s (%s) - Status no change [%s] == [%s], no notification.",
-					result.Name, result.Endpoint, result.PreStatus, result.Status)
-				continue
-			}
-			if result.PreStatus == probe.StatusInit && result.Status == probe.StatusUp {
-				log.Debugf("%s (%s) - Initial Status [%s] == [%s], no notification.",
-					result.Name, result.Endpoint, result.PreStatus, result.Status)
-				continue
-			}
+			//if result.PreStatus == result.Status {
+			//	log.Debugf("%s (%s) - Status no change [%s] == [%s], no notification.",
+			//		result.Name, result.Endpoint, result.PreStatus, result.Status)
+			//	continue
+			//}
+			//if result.PreStatus == probe.StatusInit && result.Status == probe.StatusUp {
+			//	log.Debugf("%s (%s) - Initial Status [%s] == [%s], no notification.",
+			//		result.Name, result.Endpoint, result.PreStatus, result.Status)
+			//	continue
+			//}
 			log.Infof("%s (%s) - Status changed [%s] ==> [%s]",
 				result.Name, result.Endpoint, result.PreStatus, result.Status)
 			for _, n := range notifies {
